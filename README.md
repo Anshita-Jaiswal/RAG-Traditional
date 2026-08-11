@@ -25,8 +25,6 @@ This project is a hands-on, notebook-driven walkthrough of building RAG systems 
   - [Part 1 — Native Typesense: books search](#part-1--native-typesense-books-search)
   - [Part 2 — LangChain RAG pipeline](#part-2--langchain-rag-pipeline)
 - [Example Queries](#example-queries)
-- [⚠️ Security Note](#️-security-note)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 
