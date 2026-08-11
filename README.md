@@ -241,26 +241,6 @@ found_docs = docsearch.similarity_search(query)
 print(found_docs[0].page_content)
 ```
 
-## ⚠️ Security Note
-
-The current notebook (`typesense.ipynb`) has **live API keys hardcoded directly in the code cells** (a Typesense API key and a Groq API key). This is a real exposure risk since the notebook is committed to a public repository. Before doing anything else:
-
-1. **Rotate/regenerate both keys immediately** from the [Typesense Cloud dashboard](https://cloud.typesense.org/) and the [Groq console](https://console.groq.com/keys) — treat the currently-committed keys as compromised.
-2. **Remove the hardcoded keys** from the notebook and replace them with `os.environ[...]` calls as shown in [Configure environment variables](#4-configure-environment-variables).
-3. **Add `.env` to `.gitignore`** so future keys never get committed:
-   ```bash
-   echo ".env" >> .gitignore
-   ```
-4. If you've already pushed keys to Git history, consider that the history itself needs scrubbing (e.g. with `git filter-repo` or BFG Repo-Cleaner) in addition to rotation, since rotation alone doesn't remove the old value from past commits.
-
-## Roadmap
-
-- [ ] Wire the retrieved context from Part 2 into an actual `ChatGroq` call to complete the generation step
-- [ ] Add a `.env.example` template
-- [ ] Move hardcoded credentials out of the notebook (see Security Note)
-- [ ] Add a simple CLI/script (`main.py`) that runs the pipeline end-to-end outside the notebook
-- [ ] Document the contents of `data/` and `notebook/`
-- [ ] Add evaluation of retrieval quality (e.g. recall@k) between the native Typesense search and the LangChain vector search
 
 ## Contributing
 
